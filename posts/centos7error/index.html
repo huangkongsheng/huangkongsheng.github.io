@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CentOS7 启动防火墙 报错 | Huangkongsheng Blog</title>
+
+    
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="Huangkongsheng" />
+<meta name="description" content="CentOS7 启动防火墙 报错 Failed to start iptables.service: Unit not found. CentOS7中执行 service iptables restart/start/stop 报错： Redirecting to /bin/systemctl restart iptables.service Failed to restart iptables.service: Unit not found. 原因是因为CentOS7 里面是用 firewalld (相关介绍介绍请点击" />
+
+
+
+<meta name="generator" content="Hugo 0.74.3" />
+
+<link rel="canonical" href="https://huangkongsheng.github.io/posts/centos7error/" />
+
+
+<meta property="og:title" content="CentOS7 启动防火墙 报错" />
+<meta property="og:description" content="CentOS7 启动防火墙 报错 Failed to start iptables.service: Unit not found. CentOS7中执行 service iptables restart/start/stop 报错： Redirecting to /bin/systemctl restart iptables.service Failed to restart iptables.service: Unit not found. 原因是因为CentOS7 里面是用 firewalld (相关介绍介绍请点击" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://huangkongsheng.github.io/posts/centos7error/" />
+<meta property="article:published_time" content="2020-09-09T22:26:15+08:00" />
+<meta property="article:modified_time" content="2020-09-09T22:26:15+08:00" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 启动防火墙 报错"/>
+<meta name="twitter:description" content="CentOS7 启动防火墙 报错 Failed to start iptables.service: Unit not found. CentOS7中执行 service iptables restart/start/stop 报错： Redirecting to /bin/systemctl restart iptables.service Failed to restart iptables.service: Unit not found. 原因是因为CentOS7 里面是用 firewalld (相关介绍介绍请点击"/>
+
+
+<link rel="stylesheet" href="/css/semantic.min.css" />
+<link rel="stylesheet" href="/css/OverlayScrollbars.min.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+<link rel="stylesheet" href="/css/site.css" />
+
+
+<style>
+  a {
+    color: seagreen !important;
+  }
+</style>
+
+
+
+<style>
+  .inverted a {
+     color: darkseagreen !important;
+  }
+</style>
+
+
+
+<style>
+  body {
+    
+      background-color: black;
+    
+    
+      background-image: url(/me/background.jpg);
+    
+  }
+</style>
+
+
+    
+
+
+  
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/gruvbox-light.min.css" />
+  
+
+
+
+  </head>
+
+  <body>
+    
+<nav class="ui secondary inverted menu dream-menu">
+
+  <div class="item">
+    <i class="large link bullseye icon dream-flip-toggle" title="翻转！"></i>
+  </div>
+  <div class="item">
+    <i class="large link home icon" title="首页" onclick="window.location.href = 'https:\/\/huangkongsheng.github.io'"></i>
+  </div>
+  <div class="item">
+    <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
+  </div>
+  
+  <div class="item">
+    <i class="large link search icon" onclick="toggleSearch()"></i>
+  </div>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+<div class="ui centered relaxed grid dream-grid">
+  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    
+    <section class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url();"></div>
+    </section>
+    
+    <section class="ui attached segment">
+      <header>
+        <h1 class="ui large header">
+          CentOS7 启动防火墙 报错
+          <div class="sub header">
+            @
+            
+              
+                Huangkongsheng
+              
+            
+            · Wednesday, Sep 9, 2020
+            · 1 分钟阅读
+            · 更新于 Sep 9, 2020
+          </div>
+        </h1>
+      </header>
+
+      <article style="margin-top: 2rem;"><h1 id="centos7-启动防火墙-报错-failed-to-start-iptablesservice-unit-not-found">CentOS7 启动防火墙 报错 Failed to start iptables.service: Unit not found.</h1>
+<p>CentOS7中执行</p>
+<p>service iptables restart/start/stop</p>
+<p><strong>报错：</strong></p>
+<p><strong>Redirecting to /bin/systemctl restart iptables.service</strong></p>
+<p><strong>Failed to restart iptables.service: Unit not found.</strong></p>
+<p>原因是因为CentOS7 里面是用 <a href="http://blog.51cto.com/11638832/2092203">firewalld </a>(相关介绍介绍请点击)来管理防火墙的</p>
+<p>命令语法：firewall-cmd [&ndash;zone=zone] 动作 [&ndash;permanent]</p>
+<p>注：如果不指定&ndash;zone选项，则为当前所在的默认区域，&ndash;permanent选项为是否将改动写入到区域配置文件中</p>
+<p>firewall的状态：</p>
+<p>&ndash;state ##查看防火墙的状态</p>
+<p>&ndash;reload ##重新加载防火墙，中断用户的连接，将临时配置清掉，加载配置文件中的永久配置</p>
+<p>&ndash;complete-reload ##重新加载防火墙，不中断用户的连接（防火墙出严重故障时使用）</p>
+<p>&ndash;panic-on ##紧急模式，强制关闭所有网络连接,&ndash;panic-off是关闭紧急模式</p>
+<p>例:</p>
+<p>添加80端口为允许：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">firewall<span style="color:#f92672">-</span>cmd <span style="color:#f92672">--</span>zone<span style="color:#f92672">=</span>public <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span><span style="color:#f92672">/</span>tcp <span style="color:#f92672">--</span>permanent
+</code></pre></div><p>（&ndash;permanent 没有此参数重启后失效）</p>
+<p>添加范围例外端口 如 5000-10000：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">firewall<span style="color:#f92672">-</span>cmd <span style="color:#f92672">--</span>zone<span style="color:#f92672">=</span>public <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">5000</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10000</span><span style="color:#f92672">/</span>tcp <span style="color:#f92672">--</span>permanent 
+</code></pre></div><p>添加完成后立刻生效：</p>
+<p>重新载入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">firewall<span style="color:#f92672">-</span>cmd <span style="color:#f92672">--</span>reload
+</code></pre></div><p>查看</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">firewall<span style="color:#f92672">-</span>cmd <span style="color:#f92672">--</span>zone<span style="color:#f92672">=</span>public <span style="color:#f92672">--</span>query<span style="color:#f92672">-</span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span><span style="color:#f92672">/</span>tcp
+</code></pre></div><p>删除</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">firewall<span style="color:#f92672">-</span>cmd <span style="color:#f92672">--</span>zone<span style="color:#f92672">=</span>public <span style="color:#f92672">--</span>remove<span style="color:#f92672">-</span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span><span style="color:#f92672">/</span>tcp <span style="color:#f92672">--</span>permanent
+</code></pre></div><p>这是我刚学习Linux 在CentOS7下安装tomcat 不能访问默认页面时遇到的问题，记录一下。</p>
+</article>
+    </section>
+
+    <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
+      
+        
+          <a class="ui label" href="/tags/linux" title="Linux">Linux</a>
+        
+      
+      <div
+        class="ui label"
+        style="float: right; cursor: pointer;"
+        onclick="savePostAsImg()">
+        <i class="save icon"></i>保存为图片
+      </div>
+    </footer>
+
+    
+      <footer class="ui attached segment" data-html2canvas-ignore>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+      </footer>
+    
+
+    
+      <footer class="ui bottom attached stacked segment post-disqus-area" data-html2canvas-ignore>
+        <div id="disqus_thread"></div>
+        <script>
+          
+
+
+          var disqus_config = function () {
+            this.page.url = 'https:\/\/huangkongsheng.github.io\/posts\/centos7error\/';  
+            this.page.identifier = '\/posts\/centos7error\/'; 
+          };
+
+          (function() { 
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + 'kongshenghuang6' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </footer>
+    
+    
+    
+
+  </div>
+  <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
+    <article class="dream-header">
+  <section class="ui top attached center aligned segment">
+    <div class="ui small circular image">
+      
+        <img src="/img/avatar.jpg">
+      
+    </div>
+
+    
+    <div class="ui medium header">Huangkongsheng 的博客<div class="sub header" style="margin-top: 0.5rem;">与其感慨路难行，不如马上出发。</div>
+    </div>
+    
+
+    <div class="ui horizontal list">
+      
+      <a class="item" href="/posts">
+        <i class="archive icon" title="归档"></i>
+      </a>
+      
+      <a class="item" href="/tags">
+        <i class="tags icon" title="所有标签"></i>
+      </a>
+      <a class="item" href="/categories">
+        <i class="th list icon" title="所有分类"></i>
+      </a>
+    </div>
+  </section>
+
+  
+  <section class="ui attached center aligned segment dream-tags">
+    
+      <a class="ui label" href="/tags/linux" title="linux">linux</a>
+    
+      <a class="ui label" href="/tags/tag2" title="tag2">tag2</a>
+    
+      <a class="ui label" href="/tags/tomcat" title="tomcat">tomcat</a>
+    
+  </section>
+  
+
+  
+  <section class="ui attached segment dream-categories">
+    <div class="ui accordion">
+      
+      
+      
+      
+      
+
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/linux" class="item">linux</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/tomecatinstallation/" class="item">Tomcat安装（解压缩安装）</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/centos7error/" class="item">CentOS7 启动防火墙 报错</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/articletitle/" class="item">Centos7.x 64位如何用rpm方法安装JDK8</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+
+      
+    </div>
+  </section>
+  
+
+  <section class="ui attached segment header-socials">
+    <nav class="ui secondary menu dream-menu dream-socials">
+  
+  
+    <div class="item">
+      <a href="mailto:1711539076@qq.com">
+        <i class=" mail icon" title="Email"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="item">
+      <a href="https://github.com/https://github.com/huangkongsheng" target="_blank">
+        <i class=" github icon" title="GitHub"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+</nav>
+
+  </section>
+
+  <section class="ui bottom attached center aligned segment">
+    
+      <p>© 2016 - 2020 Huangkongsheng Blog</p>
+    
+
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+    
+      <p>nothing's gonna change my love for you！</p>
+    
+  </section>
+</article>
+
+  </div>
+</div>
+
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <div class="ui centered relaxed grid dream-grid dream-back">
+  
+  
+  
+    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article>
+        <div class="ui top attached segment">
+          <h3 class="ui header">联系方式</h3>
+        </div>
+        <div class="ui bottom attached segment markdown-body">
+          <p>QQ：1576945489</p>
+<p>qq邮箱：1576945489@qq.com</p>
+
+        </div>
+      </article>
+    </section>
+  
+    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article>
+        <div class="ui top attached segment">
+          <h3 class="ui header">关于我</h3>
+        </div>
+        <div class="ui bottom attached segment markdown-body">
+          <p>的 ❤️ 博客</p>
+<p>记录一些 🌈 生活上，技术上的事</p>
+<p>业余时间会做开源和 JavaWeb</p>
+<p>主要的技术栈是：</p>
+<ul>
+<li>JavaScript &amp; TypeScript</li>
+<li>Java</li>
+<li>Spring</li>
+<li>Springboot</li>
+</ul>
+<p>写着玩（写过）：</p>
+<ul>
+<li>JavaScript</li>
+</ul>
+
+        </div>
+      </article>
+    </section>
+  
+
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article>
+      <div class="ui top attached segment">
+        <h3 class="ui header">社交链接</h3>
+      </div>
+      <div class="ui bottom attached segment">
+        <nav class="ui secondary menu dream-menu dream-socials">
+  
+  
+    <div class="item">
+      <a href="mailto:1711539076@qq.com">
+        <i class="large mail icon" title="Email"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="item">
+      <a href="https://github.com/https://github.com/huangkongsheng" target="_blank">
+        <i class="large github icon" title="GitHub"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+</nav>
+
+      </div>
+    </article>
+  </section>
+
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+      <footer class="ui segment">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+      </footer>
+    
+  </section>
+
+  
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+  window.darkNav =  true 
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/js/header.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+
+    
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/post.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/ocaml.min.js"></script>
+     
+  
+
+  <script>
+  hljs.initHighlightingOnLoad()
+  setHighlightTheme()
+
+  function setHighlightTheme() {
+    var isDark = localStore.getItem('hugo-theme-dream-is-dark')
+    var lightTheme = "gruvbox-light"
+    var darkTheme = "gruvbox-dark"
+    var theme = isDark ? darkTheme : lightTheme
+
+    $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')
+    $('pre').css('background', isDark ? '#333' : '')
+  }
+</script>
+
+
+
+
+
+    
+      <div class="ui inverted segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="搜索" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('https:\/\/huangkongsheng.github.io/index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: true,
+      })
+    })
+  })
+</script>
+<script src="/js/search.js"></script>
+
+    
+
+    
+  </body>
+</html>

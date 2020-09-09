@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Huangkongsheng Blog</title>
+    <link>https://huangkongsheng.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Huangkongsheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;img alt=&#34;知识共享许可协议&#34; style=&#34;border-width:0&#34; src=&#34;https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png&#34; /&gt;&lt;/a&gt;&lt;br /&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
+    <lastBuildDate>Wed, 09 Sep 2020 22:35:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://huangkongsheng.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tomcat安装（解压缩安装）</title>
+      <link>https://huangkongsheng.github.io/posts/tomecatinstallation/</link>
+      <pubDate>Wed, 09 Sep 2020 22:35:08 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/posts/tomecatinstallation/</guid>
+      <description>Tomcat安装（解压缩安装） 1、安装好了Java环境后我们可以测试下Tomcat！准备好Tomcat的安装包！ 2、将文件移动到/usr/t</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 启动防火墙 报错</title>
+      <link>https://huangkongsheng.github.io/posts/centos7error/</link>
+      <pubDate>Wed, 09 Sep 2020 22:26:15 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/posts/centos7error/</guid>
+      <description>CentOS7 启动防火墙 报错 Failed to start iptables.service: Unit not found. CentOS7中执行 service iptables restart/start/stop 报错： Redirecting to /bin/systemctl restart iptables.service Failed to restart iptables.service: Unit not found. 原因是因为CentOS7 里面是用 firewalld (相关介绍介绍请点击</description>
+    </item>
+    
+    <item>
+      <title>Centos7.x 64位如何用rpm方法安装JDK8</title>
+      <link>https://huangkongsheng.github.io/posts/articletitle/</link>
+      <pubDate>Wed, 09 Sep 2020 20:33:21 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/posts/articletitle/</guid>
+      <description>@[TOC](Centos7.x 64位如何用rpm方法安装JDK8) 一、下载JDK rpm包 前往JDK下载页面 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 这里我使用的linux是阿里云服务器的。 下载对应的rpm包，</description>
+    </item>
+    
+  </channel>
+</rss>
