@@ -89,7 +89,7 @@
     <i class="large link bullseye icon dream-flip-toggle" title="翻转！"></i>
   </div>
   <div class="item">
-    <i class="large link home icon" title="首页" onclick="window.location.href = 'https:\/\/huangkongsheng.github.io\/'"></i>
+    <i class="large link home icon" title="首页" onclick="window.location.href = 'https:\/\/huangkongsheng.github.io'"></i>
   </div>
   <div class="item">
     <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
@@ -241,6 +241,10 @@
   
   <section class="ui attached center aligned segment dream-tags">
     
+      <a class="ui label" href="/tags/git" title="git">git</a>
+    
+      <a class="ui label" href="/tags/gitpit" title="gitpit">gitpit</a>
+    
       <a class="ui label" href="/tags/linux" title="linux">linux</a>
     
       <a class="ui label" href="/tags/tag2" title="tag2">tag2</a>
@@ -259,6 +263,26 @@
       
       
 
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/git" class="item">git</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/errorauthentication/" class="item">今天使用git时出现fatal:HttpRequestException encountered.发送请求时出错。</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
       
         
 
@@ -506,7 +530,7 @@
 </div>
 <script>
   $(document).ready(function () {
-    $.getJSON('https:\/\/huangkongsheng.github.io\//index.json', function (data) {
+    $.getJSON('https:\/\/huangkongsheng.github.io/index.json', function (data) {
       $('.ui.search').search({
         source: data,
         searchFields: ['title'],
