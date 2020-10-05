@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>使用Hugo快速搭建个人博客网站 | Huangkongsheng Blog</title>
+
+    
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="Huangkongsheng" />
+<meta name="description" content="比较多人习惯用Hexo、Hugo、Jekyll这些博客框架搭建自己的博客。本文详细介绍利用最新的Hugo来(基于Go语言的博客框架)在win" />
+
+
+
+<meta name="generator" content="Hugo 0.74.3" />
+
+<link rel="canonical" href="https://huangkongsheng.github.io/posts/hugoblogbuild/" />
+
+
+<meta property="og:title" content="使用Hugo快速搭建个人博客网站" />
+<meta property="og:description" content="比较多人习惯用Hexo、Hugo、Jekyll这些博客框架搭建自己的博客。本文详细介绍利用最新的Hugo来(基于Go语言的博客框架)在win" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://huangkongsheng.github.io/posts/hugoblogbuild/" />
+<meta property="article:published_time" content="2020-09-10T23:24:34+08:00" />
+<meta property="article:modified_time" content="2020-09-10T23:24:34+08:00" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Hugo快速搭建个人博客网站"/>
+<meta name="twitter:description" content="比较多人习惯用Hexo、Hugo、Jekyll这些博客框架搭建自己的博客。本文详细介绍利用最新的Hugo来(基于Go语言的博客框架)在win"/>
+
+
+<link rel="stylesheet" href="/css/semantic.min.css" />
+<link rel="stylesheet" href="/css/OverlayScrollbars.min.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+<link rel="stylesheet" href="/css/site.css" />
+
+
+<style>
+  a {
+    color: seagreen !important;
+  }
+</style>
+
+
+
+<style>
+  .inverted a {
+     color: darkseagreen !important;
+  }
+</style>
+
+
+
+<style>
+  body {
+    
+      background-color: black;
+    
+    
+      background-image: url(/me/background.jpg);
+    
+  }
+</style>
+
+
+    
+
+
+  
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/gruvbox-light.min.css" />
+  
+
+
+
+  </head>
+
+  <body>
+    
+<nav class="ui secondary inverted menu dream-menu">
+
+  <div class="item">
+    <i class="large link bullseye icon dream-flip-toggle" title="翻转！"></i>
+  </div>
+  <div class="item">
+    <i class="large link home icon" title="首页" onclick="window.location.href = 'https:\/\/huangkongsheng.github.io\/'"></i>
+  </div>
+  <div class="item">
+    <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
+  </div>
+  
+  <div class="item">
+    <i class="large link search icon" onclick="toggleSearch()"></i>
+  </div>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+<div class="ui centered relaxed grid dream-grid">
+  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    
+    <section class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(/img/pexels-pixabay-261662.jpg);"></div>
+    </section>
+    
+    <section class="ui attached segment">
+      <header>
+        <h1 class="ui large header">
+          使用Hugo快速搭建个人博客网站
+          <div class="sub header">
+            @
+            
+              
+                Huangkongsheng
+              
+            
+            · Thursday, Sep 10, 2020
+            · 2 分钟阅读
+            · 更新于 Sep 10, 2020
+          </div>
+        </h1>
+      </header>
+
+      <article style="margin-top: 2rem;"><p>比较多人习惯用Hexo、Hugo、Jekyll这些博客框架搭建自己的博客。本文详细介绍利用最新的Hugo来(基于Go语言的博客框架)在windows上搭建个人静态博客网站。</p>
+<h3 id="使用hugo搭建博客前提">使用Hugo搭建博客前提：</h3>
+<p>电脑安装并配置好Git
+在注册GitHub账号
+掌握一定cmd和linux命令操作
+掌握配置各种环境变量</p>
+<h3 id="第一步安装hugo">第一步:安装Hugo</h3>
+<p><a href="https://github.com/gohugoio/hugo/releases">Hugo官方下载地址</a>
+下载下面的压缩包
+<img src="https://img-blog.csdnimg.cn/20200910210722981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+<img src="https://img-blog.csdnimg.cn/20200910211204228.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>下载完成后就解压放在你喜欢的地方，不用安装，就直接在windows配置环境变量就好了。
+在cmd输入hugo version 出现如下信息就表示安装好了。
+<img src="https://img-blog.csdnimg.cn/20200910211418849.png#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="第二步创建一个人博客文件夹">第二步：创建一个人博客文件夹</h3>
+<p><img src="https://img-blog.csdnimg.cn/20200910211658836.png" alt="在这里插入图片描述">
+在当前目录右键打开git
+<img src="https://img-blog.csdnimg.cn/20200910212032448.png" alt="在这里插入图片描述"></p>
+<p>输入：hugo new site myblog （myblog是自己的博客名）
+<img src="https://img-blog.csdnimg.cn/20200910212221773.png" alt="在这里插入图片描述">
+打开myblog
+<img src="https://img-blog.csdnimg.cn/20200910213123194.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="第三步下载并设置博客主题">第三步：下载并设置博客主题</h3>
+<p>进入Hugo博客主题（<a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>）下载库挑选自己喜欢的博客模板这里使用Prav模板为例点击Download</p>
+<p><img src="https://img-blog.csdnimg.cn/20200910213416518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+<img src="https://img-blog.csdnimg.cn/2020091021410210.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+也可以点击Dome浏览一下效果
+复制链接
+<img src="https://img-blog.csdnimg.cn/20200910214603256.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+切换到themes文件夹，然后输入：
+<code>git clone https://github.com/pravin/hugo-theme-prav.git </code>克隆，这样直接克隆速度是比较慢点，可以借用<a href="https://gitee.com/">gitee</a>的仓库加快速度。
+<img src="https://img-blog.csdnimg.cn/20200910214935593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+下载完后
+<img src="https://img-blog.csdnimg.cn/202009102155277.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="第四步本地启动博客">第四步:本地启动博客</h3>
+<p>进入exampleSite文件夹，然后把里面的config.toml文件复制自己博客站点的根目录下，接点击替换就好。
+<img src="https://img-blog.csdnimg.cn/20200910222811450.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+输入一下命令：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server -t m10c --buildDrafts
+</code></pre></div><p><img src="https://img-blog.csdnimg.cn/20200910230508417.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="1711539076@qq.ocm"></p>
+<p>复制<code>http://localhost:1313</code>到自己的浏览器中，运行成功：
+<img src="https://img-blog.csdnimg.cn/20200910221615182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="第五步写一篇文章进行测试">第五步：写一篇文章进行测试</h3>
+<p>命令行中键入<code>hugo new post/firstblog.md</code>
+<img src="https://img-blog.csdnimg.cn/20200910223554760.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+使用Typora打开写入内容（也可以使用其他软件打开比如：VC或者sublime）
+<img src="https://img-blog.csdnimg.cn/2020091022380089.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+重新运行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server -t hugo-theme-prav --buildDrafts
+</code></pre></div><p><img src="https://img-blog.csdnimg.cn/20200910224251576.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+想要配置自己的博客主题，可以看github上这个主题Hugo Theme Prav文档介绍（https://github.com/pravin/hugo-theme-prav），里面有说如何在config.toml文件中设置这款主题的样式
+<img src="https://img-blog.csdnimg.cn/20200910230901958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+<img src="https://img-blog.csdnimg.cn/20200910231452877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="第六步将个人博客部署到github上">第六步:将个人博客部署到Github上</h3>
+<p>点击如下创建仓库
+<img src="https://img-blog.csdnimg.cn/20200910224648829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+名称这里一定要跟你的用户名一样然后加<code>.github.io</code>,我这里报错是因为我已经过一个了。
+<img src="https://img-blog.csdnimg.cn/20200910224757683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+在myblog目录下，cmd命令行中键入命令<code>hugo --theme=hugo-theme-dream --baseUrl=&quot;https://huangkongsheng.github.io/&quot; --buildDrafts</code></p>
+<p>代码执行后就会在myblog文件夹下生成一个public文件夹
+<img src="https://img-blog.csdnimg.cn/20200910225807830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIyNzYyNg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>切换到public文件夹下
+1、<code>git init</code>
+2、<code>git add .</code> 
+3、<code>git commit -m &quot;我的博客第一次提交&quot;</code>
+4、<code>git remote add origin https://github.com/huangkongsheng/huangkongsheng.github.io.git</code> 
+5、<code>git push -u -origin master</code></p>
+</article>
+    </section>
+
+    <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
+      
+        
+          <a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
+        
+          <a class="ui label" href="/tags/git" title="git">git</a>
+        
+          <a class="ui label" href="/tags/%E5%8D%9A%E5%AE%A2" title="博客">博客</a>
+        
+      
+      <div
+        class="ui label"
+        style="float: right; cursor: pointer;"
+        onclick="savePostAsImg()">
+        <i class="save icon"></i>保存为图片
+      </div>
+    </footer>
+
+    
+      <footer class="ui attached segment" data-html2canvas-ignore>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+      </footer>
+    
+
+    
+      <footer class="ui bottom attached stacked segment post-disqus-area" data-html2canvas-ignore>
+        <div id="disqus_thread"></div>
+        <script>
+          
+
+
+          var disqus_config = function () {
+            this.page.url = 'https:\/\/huangkongsheng.github.io\/posts\/hugoblogbuild\/';  
+            this.page.identifier = '\/posts\/hugoblogbuild\/'; 
+          };
+
+          (function() { 
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + 'kongshenghuang6' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </footer>
+    
+    
+    
+
+  </div>
+  <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
+    <article class="dream-header">
+  <section class="ui top attached center aligned segment">
+    <div class="ui small circular image">
+      
+        <img src="/img/avatar.jpg">
+      
+    </div>
+
+    
+    <div class="ui medium header">Huangkongsheng 的博客<div class="sub header" style="margin-top: 0.5rem;">与其感慨路难行，不如马上出发。</div>
+    </div>
+    
+
+    <div class="ui horizontal list">
+      
+      <a class="item" href="/posts">
+        <i class="archive icon" title="归档"></i>
+      </a>
+      
+      <a class="item" href="/tags">
+        <i class="tags icon" title="所有标签"></i>
+      </a>
+      <a class="item" href="/categories">
+        <i class="th list icon" title="所有分类"></i>
+      </a>
+    </div>
+  </section>
+
+  
+  <section class="ui attached center aligned segment dream-tags">
+    
+      <a class="ui label" href="/tags/alipay" title="alipay">alipay</a>
+    
+      <a class="ui label" href="/tags/bigdecimal" title="bigdecimal">bigdecimal</a>
+    
+      <a class="ui label" href="/tags/centos8" title="centos8">centos8</a>
+    
+      <a class="ui label" href="/tags/docker" title="docker">docker</a>
+    
+      <a class="ui label" href="/tags/email" title="email">email</a>
+    
+      <a class="ui label" href="/tags/git" title="git">git</a>
+    
+      <a class="ui label" href="/tags/gitpit" title="gitpit">gitpit</a>
+    
+      <a class="ui label" href="/tags/hugo" title="hugo">hugo</a>
+    
+      <a class="ui label" href="/tags/jdk" title="jdk">jdk</a>
+    
+      <a class="ui label" href="/tags/layui" title="layui">layui</a>
+    
+      <a class="ui label" href="/tags/linux" title="linux">linux</a>
+    
+      <a class="ui label" href="/tags/mysql" title="mysql">mysql</a>
+    
+      <a class="ui label" href="/tags/rabbitmq" title="rabbitmq">rabbitmq</a>
+    
+      <a class="ui label" href="/tags/redis" title="redis">redis</a>
+    
+      <a class="ui label" href="/tags/springboot" title="springboot">springboot</a>
+    
+      <a class="ui label" href="/tags/string" title="string">string</a>
+    
+      <a class="ui label" href="/tags/tomcat" title="tomcat">tomcat</a>
+    
+      <a class="ui label" href="/tags/%E5%8D%9A%E5%AE%A2" title="博客">博客</a>
+    
+  </section>
+  
+
+  
+  <section class="ui attached segment dream-categories">
+    <div class="ui accordion">
+      
+      
+      
+      
+      
+
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/alipay" class="item">alipay</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/%E5%85%B3%E4%BA%8E%E6%94%AF%E4%BB%98%E5%AE%9D%E5%90%8C%E6%AD%A5%E9%AA%8C%E7%AD%BE%E6%88%90%E5%8A%9F%E8%80%8C%E5%BC%82%E6%AD%A5%E9%AA%8C%E7%AD%BE%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="item">关于支付宝同步验签成功而异步验签失败的解决办法</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/docker" class="item">docker</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/docker%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2springboot%E5%8C%85%E5%90%ABmysqlredisrabbitmq/" class="item">Docker快速部署springboot包含mysql、redis、rabbitmq</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/email" class="item">email</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/securerandom%E9%9D%9E%E5%B8%B8%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="item">SecureRandom非常慢解决办法</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/git" class="item">git</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/hugoblogbuild/" class="item">使用Hugo快速搭建个人博客网站</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/errorauthentication/" class="item">今天使用git时出现fatal:HttpRequestException encountered.发送请求时出错。</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/java" class="item">java</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/bigdecimal%E8%BD%ACstring/" class="item">BigDecimal转String</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/layui" class="item">layui</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/springboot%E6%95%B4%E5%90%88layui%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5/" class="item">Springboot整合layui进行分页</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+      
+
+      
+        <div class="title">
+          <a class="item" href="/categories" style="padding-left: 0.5rem;">......</a>
+        </div>
+      
+    </div>
+  </section>
+  
+
+  <section class="ui attached segment header-socials">
+    <nav class="ui secondary menu dream-menu dream-socials">
+  
+  
+    <div class="item">
+      <a href="mailto:1711539076@qq.com">
+        <i class=" mail icon" title="Email"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="item">
+      <a href="https://github.com/https://github.com/huangkongsheng" target="_blank">
+        <i class=" github icon" title="GitHub"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+</nav>
+
+  </section>
+
+  <section class="ui bottom attached center aligned segment">
+    
+      <p>© 2016 - 2020 Huangkongsheng Blog</p>
+    
+
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+    
+      <p>nothing's gonna change my love for you！</p>
+    
+  </section>
+</article>
+
+  </div>
+</div>
+
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <div class="ui centered relaxed grid dream-grid dream-back">
+  
+  
+  
+    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article>
+        <div class="ui top attached segment">
+          <h3 class="ui header">联系方式</h3>
+        </div>
+        <div class="ui bottom attached segment markdown-body">
+          <p>QQ：1576945489</p>
+<p>qq邮箱：1576945489@qq.com</p>
+
+        </div>
+      </article>
+    </section>
+  
+    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article>
+        <div class="ui top attached segment">
+          <h3 class="ui header">关于我</h3>
+        </div>
+        <div class="ui bottom attached segment markdown-body">
+          <p>的 ❤️ 博客</p>
+<p>记录一些 🌈 生活上，技术上的事</p>
+<p>业余时间会做开源和 JavaWeb</p>
+<p>主要的技术栈是：</p>
+<ul>
+<li>JavaScript &amp; TypeScript</li>
+<li>Java</li>
+<li>Spring</li>
+<li>Springboot</li>
+</ul>
+<p>写着玩（写过）：</p>
+<ul>
+<li>JavaScript</li>
+</ul>
+
+        </div>
+      </article>
+    </section>
+  
+
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article>
+      <div class="ui top attached segment">
+        <h3 class="ui header">社交链接</h3>
+      </div>
+      <div class="ui bottom attached segment">
+        <nav class="ui secondary menu dream-menu dream-socials">
+  
+  
+    <div class="item">
+      <a href="mailto:1711539076@qq.com">
+        <i class="large mail icon" title="Email"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="item">
+      <a href="https://github.com/https://github.com/huangkongsheng" target="_blank">
+        <i class="large github icon" title="GitHub"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+</nav>
+
+      </div>
+    </article>
+  </section>
+
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+      <footer class="ui segment">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+      </footer>
+    
+  </section>
+
+  
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+  window.darkNav =  true 
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/js/header.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+
+    
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/post.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/ocaml.min.js"></script>
+     
+  
+
+  <script>
+  hljs.initHighlightingOnLoad()
+  setHighlightTheme()
+
+  function setHighlightTheme() {
+    var isDark = localStore.getItem('hugo-theme-dream-is-dark')
+    var lightTheme = "gruvbox-light"
+    var darkTheme = "gruvbox-dark"
+    var theme = isDark ? darkTheme : lightTheme
+
+    $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')
+    $('pre').css('background', isDark ? '#333' : '')
+  }
+</script>
+
+
+
+
+
+    
+      <div class="ui inverted segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="搜索" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('https:\/\/huangkongsheng.github.io\//index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: true,
+      })
+    })
+  })
+</script>
+<script src="/js/search.js"></script>
+
+    
+
+    
+  </body>
+</html>

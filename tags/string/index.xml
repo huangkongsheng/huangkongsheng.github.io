@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>string on Huangkongsheng Blog</title>
+    <link>https://huangkongsheng.github.io/tags/string/</link>
+    <description>Recent content in string on Huangkongsheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;img alt=&#34;知识共享许可协议&#34; style=&#34;border-width:0&#34; src=&#34;https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png&#34; /&gt;&lt;/a&gt;&lt;br /&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
+    <lastBuildDate>Mon, 05 Oct 2020 11:56:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://huangkongsheng.github.io/tags/string/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BigDecimal转String</title>
+      <link>https://huangkongsheng.github.io/posts/bigdecimal%E8%BD%ACstring/</link>
+      <pubDate>Mon, 05 Oct 2020 11:56:10 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/posts/bigdecimal%E8%BD%ACstring/</guid>
+      <description>BigDecimal转String 代码： public static void main(String[] args) { // 浮点数的打印 System.out.println(new BigDecimal(&amp;#34;10000000000&amp;#34;).toString()); // 普通的数字字符串 System.out.println(new BigDecimal(&amp;#34;100.000&amp;#34;).toString()); // 去除末尾多余的0 System.out.println(new BigDecimal(&amp;#34;100.000&amp;#34;).stripTrailingZeros().toString()); // 避免输出科学计数法 System.out.println(new BigDecimal(&amp;#34;100.000&amp;#34;).stripTrailingZeros().toPlainString()); }</description>
+    </item>
+    
+  </channel>
+</rss>

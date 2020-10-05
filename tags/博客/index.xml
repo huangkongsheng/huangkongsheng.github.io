@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客 on Huangkongsheng Blog</title>
+    <link>https://huangkongsheng.github.io/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 博客 on Huangkongsheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;img alt=&#34;知识共享许可协议&#34; style=&#34;border-width:0&#34; src=&#34;https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png&#34; /&gt;&lt;/a&gt;&lt;br /&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
+    <lastBuildDate>Thu, 10 Sep 2020 23:24:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://huangkongsheng.github.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Hugo快速搭建个人博客网站</title>
+      <link>https://huangkongsheng.github.io/posts/hugoblogbuild/</link>
+      <pubDate>Thu, 10 Sep 2020 23:24:34 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/posts/hugoblogbuild/</guid>
+      <description>比较多人习惯用Hexo、Hugo、Jekyll这些博客框架搭建自己的博客。本文详细介绍利用最新的Hugo来(基于Go语言的博客框架)在win</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,26 +7,71 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;img alt=&#34;知识共享许可协议&#34; style=&#34;border-width:0&#34; src=&#34;https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png&#34; /&gt;&lt;/a&gt;&lt;br /&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
-    <lastBuildDate>Thu, 10 Sep 2020 19:40:26 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2020 12:16:25 +0800</lastBuildDate>
     
 	<atom:link href="https://huangkongsheng.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>git</title>
-      <link>https://huangkongsheng.github.io/categories/git/</link>
-      <pubDate>Thu, 10 Sep 2020 19:40:26 +0800</pubDate>
+      <title>layui</title>
+      <link>https://huangkongsheng.github.io/categories/layui/</link>
+      <pubDate>Mon, 05 Oct 2020 12:16:25 +0800</pubDate>
       
-      <guid>https://huangkongsheng.github.io/categories/git/</guid>
+      <guid>https://huangkongsheng.github.io/categories/layui/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
       <link>https://huangkongsheng.github.io/categories/linux/</link>
-      <pubDate>Wed, 09 Sep 2020 22:35:08 +0800</pubDate>
+      <pubDate>Mon, 05 Oct 2020 12:11:14 +0800</pubDate>
       
       <guid>https://huangkongsheng.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alipay</title>
+      <link>https://huangkongsheng.github.io/categories/alipay/</link>
+      <pubDate>Mon, 05 Oct 2020 12:04:24 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/categories/alipay/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://huangkongsheng.github.io/categories/docker/</link>
+      <pubDate>Mon, 05 Oct 2020 11:59:01 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://huangkongsheng.github.io/categories/java/</link>
+      <pubDate>Mon, 05 Oct 2020 11:56:10 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>email</title>
+      <link>https://huangkongsheng.github.io/categories/email/</link>
+      <pubDate>Mon, 05 Oct 2020 11:36:33 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/categories/email/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://huangkongsheng.github.io/categories/git/</link>
+      <pubDate>Thu, 10 Sep 2020 23:24:34 +0800</pubDate>
+      
+      <guid>https://huangkongsheng.github.io/categories/git/</guid>
       <description></description>
     </item>
     
