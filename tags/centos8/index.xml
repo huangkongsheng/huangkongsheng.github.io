@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>centos8 on Huangkongsheng Blog</title>
-    <link>https://huangkongsheng.github.io/tags/centos8/</link>
+    <link>https://huangkongshenghugh.gitee.io/tags/centos8/</link>
     <description>Recent content in centos8 on Huangkongsheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;img alt=&#34;知识共享许可协议&#34; style=&#34;border-width:0&#34; src=&#34;https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png&#34; /&gt;&lt;/a&gt;&lt;br /&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
     <lastBuildDate>Mon, 05 Oct 2020 11:40:58 +0800</lastBuildDate>
     
-	<atom:link href="https://huangkongsheng.github.io/tags/centos8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://huangkongshenghugh.gitee.io/tags/centos8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>今天用CentOS8安装Docker报错</title>
-      <link>https://huangkongsheng.github.io/posts/%E4%BB%8A%E5%A4%A9%E7%94%A8centos8%E5%AE%89%E8%A3%85docker%E6%8A%A5%E9%94%99/</link>
+      <link>https://huangkongshenghugh.gitee.io/posts/%E4%BB%8A%E5%A4%A9%E7%94%A8centos8%E5%AE%89%E8%A3%85docker%E6%8A%A5%E9%94%99/</link>
       <pubDate>Mon, 05 Oct 2020 11:40:58 +0800</pubDate>
       
-      <guid>https://huangkongsheng.github.io/posts/%E4%BB%8A%E5%A4%A9%E7%94%A8centos8%E5%AE%89%E8%A3%85docker%E6%8A%A5%E9%94%99/</guid>
+      <guid>https://huangkongshenghugh.gitee.io/posts/%E4%BB%8A%E5%A4%A9%E7%94%A8centos8%E5%AE%89%E8%A3%85docker%E6%8A%A5%E9%94%99/</guid>
       <description>今天用CentOS8安装Docker报错problem:package docker-ce-3:19.03.13-3.el7.x86_64 requires containerd.io 1.背景简介 最近我更换了系统，之前我用的是CentOS7，当时安</description>
     </item>
     
     <item>
       <title>SecureRandom非常慢解决办法</title>
-      <link>https://huangkongsheng.github.io/posts/securerandom%E9%9D%9E%E5%B8%B8%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>https://huangkongshenghugh.gitee.io/posts/securerandom%E9%9D%9E%E5%B8%B8%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Mon, 05 Oct 2020 11:36:33 +0800</pubDate>
       
-      <guid>https://huangkongsheng.github.io/posts/securerandom%E9%9D%9E%E5%B8%B8%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>https://huangkongshenghugh.gitee.io/posts/securerandom%E9%9D%9E%E5%B8%B8%E6%85%A2%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>springboot项目第一次登陆非常慢（SecureRandom 非常慢解决办法） 背景： springboot项目在本地测试时用户登录就很快，</description>
     </item>
     

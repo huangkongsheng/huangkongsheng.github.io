@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Huangkongsheng Blog</title>
-    <link>https://huangkongsheng.github.io/categories/git/</link>
+    <link>https://huangkongshenghugh.gitee.io/categories/git/</link>
     <description>Recent content in git on Huangkongsheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;img alt=&#34;知识共享许可协议&#34; style=&#34;border-width:0&#34; src=&#34;https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png&#34; /&gt;&lt;/a&gt;&lt;br /&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
     <lastBuildDate>Thu, 10 Sep 2020 23:24:34 +0800</lastBuildDate>
     
-	<atom:link href="https://huangkongsheng.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://huangkongshenghugh.gitee.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用Hugo快速搭建个人博客网站</title>
-      <link>https://huangkongsheng.github.io/posts/hugoblogbuild/</link>
+      <link>https://huangkongshenghugh.gitee.io/posts/hugoblogbuild/</link>
       <pubDate>Thu, 10 Sep 2020 23:24:34 +0800</pubDate>
       
-      <guid>https://huangkongsheng.github.io/posts/hugoblogbuild/</guid>
+      <guid>https://huangkongshenghugh.gitee.io/posts/hugoblogbuild/</guid>
       <description>比较多人习惯用Hexo、Hugo、Jekyll这些博客框架搭建自己的博客。本文详细介绍利用最新的Hugo来(基于Go语言的博客框架)在win</description>
     </item>
     
     <item>
       <title>今天使用git时出现fatal:HttpRequestException encountered.发送请求时出错。</title>
-      <link>https://huangkongsheng.github.io/posts/errorauthentication/</link>
+      <link>https://huangkongshenghugh.gitee.io/posts/errorauthentication/</link>
       <pubDate>Thu, 10 Sep 2020 19:40:26 +0800</pubDate>
       
-      <guid>https://huangkongsheng.github.io/posts/errorauthentication/</guid>
+      <guid>https://huangkongshenghugh.gitee.io/posts/errorauthentication/</guid>
       <description>今天本来想更新一下我的博客突然就报出了，于是上网查了资料。 原因在于:Github 禁用了TLS v1.0 and v1.1，必须更新Windows的git凭证</description>
     </item>
     
